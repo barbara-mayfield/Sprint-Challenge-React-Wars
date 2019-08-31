@@ -13,12 +13,11 @@ const App = () => {
   useEffect(() => {
     axios.get('https://swapi.co/api/people/')
           .then(response => {
-            console.log(response.person);
-            console.log(person);
-            const result = response.data.results;
-            setPerson(result);
+            console.log(response.data);
+            const person = response.data.results;
+            setPerson(person);
       });
-  }, []);
+  }, [person]);
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -27,12 +26,14 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      { person.map(person => {
+      { person.map((people, index) => {
         return (
         <Card
-              name = {person.name}
-              birthYear = {person.birth_year}
-              gender = {person.gender}/>
+              key = {index}
+              name = {people.name}
+              birthYear = {people.birth_year}
+              gender = {people.gender}
+              people = {people}/>
                 )
       })}
     </div>
