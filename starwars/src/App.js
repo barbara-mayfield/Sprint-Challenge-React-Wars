@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 import Card from './components/CardComponents/Card'
 import './App.css';
-
-const StyledContainer = styled.div`
-  width: 12rem;
-  height: 10rem;
-`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -31,17 +25,16 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <StyledContainer>
-      { person.map((people, index) => {
+      { person.map((person, index) => {
         return (
         <Card
               key = {index}
-              name = {people.name}
-              birthYear = {people.birth_year}
-              gender = {people.gender} />
+              name = {person.name}
+              gender = {person.gender}
+              birthYear = {person.birth_year}
+               />
                 )
       })}
-      </StyledContainer>
     </div>
   );
 }
