@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import Card from './components/CardComponents/Card'
 import './App.css';
 
@@ -11,12 +11,12 @@ const App = () => {
   const [person, setPerson] = useState([]);
 
   useEffect(() => {
-    axios.get('https://henry-mock-swapi.herokuapp.com/api')
+    axios.get('https://swapi.co/api/people/')
           .then(response => {
-            console.log(res.data);
-            console.log(data);
-            const people = response.data.results;
-            setPerson(people);
+            console.log(response.person);
+            console.log(person);
+            const result = response.data.results;
+            setPerson(result);
       });
   }, []);
 
@@ -27,9 +27,17 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <Card name={data.name} />
+      { person.map(person => {
+        return (
+        <Card
+              name = {person.name}
+              birthYear = {person.birth_year}
+              gender = {person.gender}/>
+                )
+      })}
     </div>
   );
 }
+
 
 export default App;
