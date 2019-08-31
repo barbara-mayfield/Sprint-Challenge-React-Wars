@@ -5,7 +5,7 @@ import Card from './components/CardComponents/Card'
 import './App.css';
 
 const StyledContainer = styled.div`
-  width: 8rem;
+  width: 12rem;
   height: 10rem;
 `
 
@@ -20,7 +20,8 @@ const App = () => {
           .then(response => {
             console.log(response.data);
             setPerson(response.data.results);
-      });
+          })
+          .catch(error => console.log(error));
   }, []);
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
