@@ -2,16 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-  width: 12rem;
-  height: 10rem;
-  border: 1px solid black;
+    padding: 2rem;
+    margin: 0 auto;
+    border: 1px solid black;
 `
 
 function Card(prop) {
 
     return (
         <StyledContainer>
-        <Card name={prop.name} gender={prop.gender} birthday={prop.birth_year} />
+        <h1>{prop.name}</h1>
+        <p>{prop.gender}</p>
+        <p>{prop.birthYear}</p>
         </StyledContainer>
     );
 }

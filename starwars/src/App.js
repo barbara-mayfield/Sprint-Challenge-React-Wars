@@ -33,7 +33,7 @@ const App = () => {
               gender = {person.gender}
               birthYear = {person.birth_year}
                />
-                )
+        )
       })}
     </div>
   );
