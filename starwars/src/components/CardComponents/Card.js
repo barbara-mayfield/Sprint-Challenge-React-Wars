@@ -9,11 +9,16 @@ const StyledContainer = styled.div`
     width: 50%;    
 `
 
+const NameStyle = styled.h1`
+    text-shadow: 1px 1px 5px #fff;
+    color: navy;
+`
+
 function Card(prop) {
 
     return (
         <StyledContainer>
-        <h1>{prop.name}</h1>
+        <NameStyle>{prop.name}</NameStyle>
         <p>Gender: {prop.gender}</p>
         <p>Eye Color: {prop.eyeColor}</p>
         <p>Birthday: {prop.birthYear}</p>
