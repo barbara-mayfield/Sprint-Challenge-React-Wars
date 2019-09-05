@@ -31,7 +31,12 @@ const App = () => {
               key = {index}
               name = {person.name}
               gender = {person.gender}
+              eyeColor = {person.eye_color}
               birthYear = {person.birth_year}
+              height = {person.height}
+              mass = {person.mass}
+              edited = {person.edited}
+              created = {person.created}
                />
         )
       })}
